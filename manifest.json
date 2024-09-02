@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "author": "王剑辉",
+  "name": "字体设置器",
+  "version": "1.0",
+  "description": "为指定的网页设置自定义字体。",
+  "permissions": ["activeTab", "storage", "scripting", "tabs"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "打开字体设置"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
