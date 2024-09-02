@@ -1,88 +1,94 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-  <meta charset="UTF-8" />
-  <title>字体设置</title>
-  <style>
-    html, body, input, select, textarea {
-      font-family: "Fira Code", "PingFang SC", Consolas, "Courier New", monospace, system-ui, Avenir, "Helvetica Neue", Helvetica, "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-      font-size: 16px;
-    }
-    body {
-      padding: 20px;
-    }
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    textarea, input {
-      width: 100%;
-      margin-bottom: 15px;
-      font-size: 16px;
-    }
-    textarea {
-      height: 120px; /* 调整textarea高度 */
-    }
-    .checkbox-container {
-      display: flex;
-      align-items: center;
-      margin-bottom: 15px;
-    }
-    .checkbox-container input[type="checkbox"] {
-      margin-right: 10px;
-      margin-top: 12px; /* 调整复选框的顶部外边距 */
-      transform: scale(1.2);
-      width: auto; /* 保持宽度为 auto */
-      vertical-align: middle; /* 确保复选框与文本垂直居中 */
-    }
-    .checkbox-container label {
-      margin-bottom: 0;
-      font-size: 16px;
-      line-height: 1.5;
-      width: auto; /* 保持宽度为 auto */
-    }
-    button {
-      width: 100%;
-      padding: 10px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      cursor: pointer;
-      font-size: 16px;
-    }
-    .info {
-      font-size: 14px;
-      color: #555;
-      margin-bottom: 20px;
-    }
-  </style>
-</head>
-<body>
-  <h2>字体设置</h2>
+  <head>
+    <meta charset="UTF-8" />
+    <title>字体设置</title>
+    <style>
+      html,
+      body,
+      input,
+      select,
+      textarea {
+        font-family: "Fira Code", "PingFang SC", Consolas, "Courier New", monospace, system-ui, Avenir, "Helvetica Neue", Helvetica, "Hiragino Sans GB", "Microsoft YaHei",
+          "微软雅黑", Arial, sans-serif;
+        font-size: 16px;
+      }
+      body {
+        padding: 20px;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      textarea,
+      input {
+        width: 100%;
+        margin-bottom: 15px;
+        font-size: 16px;
+      }
+      textarea {
+        height: 120px; /* 调整textarea高度 */
+      }
+      .checkbox-container {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+      .checkbox-container input[type="checkbox"] {
+        margin-right: 10px;
+        margin-top: 12px; /* 调整复选框的顶部外边距 */
+        transform: scale(1.2);
+        width: auto; /* 保持宽度为 auto */
+        vertical-align: middle; /* 确保复选框与文本垂直居中 */
+      }
+      .checkbox-container label {
+        margin-bottom: 0;
+        font-size: 16px;
+        line-height: 1.5;
+        width: auto; /* 保持宽度为 auto */
+      }
+      button {
+        width: 100%;
+        padding: 10px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      .info {
+        font-size: 14px;
+        color: #555;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>字体设置</h2>
 
-  <div class="checkbox-container">
-    <input type="checkbox" id="enable-all-sites" />
-    <label for="enable-all-sites">在所有网站上启用（除了排除的URL）</label>
-  </div>
+    <div class="checkbox-container">
+      <input type="checkbox" id="enable-all-sites" />
+      <label for="enable-all-sites">在所有网站上启用（除了排除的URL）</label>
+    </div>
 
-  <label for="allowed-urls">允许的URL（每行一个）：</label>
-  <textarea id="allowed-urls" placeholder="https://example.com"></textarea>
+    <label for="allowed-urls">允许的URL（每行一个）：</label>
+    <textarea id="allowed-urls" placeholder="https://example.com"></textarea>
 
-  <label for="excluded-urls">排除的URL（每行一个）：</label>
-  <textarea id="excluded-urls" placeholder="https://example.com/exclude"></textarea>
+    <label for="excluded-urls">排除的URL（每行一个）：</label>
+    <textarea id="excluded-urls" placeholder="https://example.com/exclude"></textarea>
 
-  <label for="font">CSS字体设置：</label>
-  <textarea id="font" placeholder="例如：'Arial, sans-serif'"></textarea>
+    <label for="font">CSS字体设置：</label>
+    <textarea id="font" placeholder="例如：'Arial, sans-serif'"></textarea>
 
-  <div class="info">
-    <p>URL写法说明：</p>
-    <p>1. 输入完整的URL（例如：https://example.com）来指定单个网站。</p>
-    <p>2. 你可以只输入域名部分（例如：example.com），这将匹配所有该域名下的页面。</p>
-    <p>3. 如果启用“在所有网站上启用”，则所有网页都将应用字体，除了你在“排除的URL”中列出的地址。</p>
-  </div>
+    <div class="info">
+      <p>URL写法说明：</p>
+      <p>1. 输入完整的URL（例如：https://example.com）来指定单个网站。</p>
+      <p>2. 你可以只输入域名部分（例如：example.com），这将匹配所有该域名下的页面。</p>
+      <p>3. 如果启用“在所有网站上启用”，则所有网页都将应用字体，除了你在“排除的URL”中列出的地址。</p>
+    </div>
 
-  <button id="save">保存设置</button>
+    <button id="save">保存设置</button>
 
-  <script src="popup.js"></script>
-</body>
+    <script src="popup.js"></script>
+  </body>
 </html>
